@@ -256,6 +256,13 @@ h3 {
   background: #e9e4df;
 }
 
+.media-panel .portrait-image {
+  height: clamp(420px, 52vw, 620px);
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+}
+
 .quick-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
