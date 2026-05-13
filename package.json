@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "npx --yes serve . -l 4173"
+  },
+  "dependencies": {
+    "@lucide/web": "^0.468.0",
+    "serve": "^14.2.4"
+  },
+  "devDependencies": {}
+}
