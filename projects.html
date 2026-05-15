@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Projects | Samar Dhafer</title>
     <meta name="description" content="Selected multimedia, UI/UX, advertising, photography, and storytelling projects by Samar Dhafer.">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=3">
     <script defer src="https://unpkg.com/lucide@latest"></script>
-    <script defer src="site.js?v=2"></script>
+    <script defer src="site.js?v=3"></script>
   </head>
   <body>
     <header class="site-header">
@@ -30,46 +30,117 @@
         <h1>Projects</h1>
       </section>
 
-      <section class="section timeline">
-        <article class="timeline-item" id="her-vision">
-          <p class="timeline-kicker">Solo graduation project</p>
-          <h2>Her Vision</h2>
-          <p>A multimedia website project focused on women artists, combining cultural storytelling, interactive media, photography, interviews, museum visits, and digital presentation.</p>
-          <p>I handled the project direction, research, blog writing, photography, visual storytelling, website structure, short-form video production, and digital presentation.</p>
-          <p><strong>Tools:</strong> WordPress, StoryMap, photography, Adobe Premiere Pro.</p>
-        </article>
+      <section class="section project-index">
+        <button class="project-card interactive-card" id="her-vision" type="button" data-modal-target="modal-her-vision">
+          <img src="assets/projects/her-vision-2.jpg" alt="Her Vision project preview">
+          <span class="timeline-kicker">Solo graduation project</span>
+          <strong>Her Vision: Women in Contemporary Art</strong>
+          <span>A multimedia website about women artists, documentary research, photography, blog writing, and digital presentation.</span>
+        </button>
 
-        <article class="timeline-item" id="veritruth">
+        <button class="project-card interactive-card" id="veritruth" type="button" data-modal-target="modal-veritruth">
+          <img src="assets/projects/veritruth-2.png" alt="VeriTruth project preview">
+          <span class="timeline-kicker">Solo academic project</span>
+          <strong>VeriTruth</strong>
+          <span>A mobile app concept for detecting AI-generated content and misinformation.</span>
+        </button>
+
+        <button class="project-card interactive-card" id="drowning-in-silence" type="button" data-modal-target="modal-drowning">
+          <img src="assets/projects/drowning-in-silence.gif" alt="Drowning in Silence animated GIF preview">
+          <span class="timeline-kicker">Solo academic project</span>
+          <strong>Drowning in Silence</strong>
+          <span>A GIF representing society's pressure on women and the emotional exhaustion it creates.</span>
+        </button>
+
+        <button class="project-card interactive-card" id="the-shaper" type="button" data-modal-target="modal-shaper">
+          <video src="assets/projects/the-shaper.mp4" muted playsinline preload="metadata"></video>
+          <span class="timeline-kicker">Academic team project</span>
+          <strong>The Shaper / BAU PR Commercial</strong>
+          <span>A one-minute promotional television commercial for the BAU PR Department.</span>
+        </button>
+
+        <button class="project-card interactive-card" id="photography" type="button" data-modal-target="modal-photography">
+          <img src="assets/projects/photo-portrait.jpg" alt="Photography project preview">
+          <span class="timeline-kicker">Solo academic project</span>
+          <strong>Photography</strong>
+          <span>Portraiture, movement and blur studies, fashion photography, and seasonal visual concepts.</span>
+        </button>
+      </section>
+
+      <div class="modal" id="modal-her-vision" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-her-vision-title">
+        <div class="modal-panel">
+          <button class="modal-close" type="button" data-modal-close aria-label="Close project"><i data-lucide="x"></i></button>
+          <p class="timeline-kicker">Solo graduation project</p>
+          <h2 id="modal-her-vision-title">Her Vision: Women in Contemporary Art</h2>
+          <p>A multimedia website project focused on women artists, combining cultural storytelling, interactive media, photography, interviews, museum visits, blog writing, and digital presentation.</p>
+          <p>I handled the project direction, research, blog writing, photography, visual storytelling, website structure, short-form video production, and digital presentation.</p>
+          <p><a class="project-link" href="https://hervision2026.wordpress.com/" target="_blank" rel="noreferrer">Visit Her Vision <i data-lucide="arrow-up-right"></i></a></p>
+          <div class="modal-gallery">
+            <img src="assets/projects/her-vision-1.jpg" alt="Her Vision research image">
+            <img src="assets/projects/her-vision-2.jpg" alt="Her Vision location image">
+            <img src="assets/projects/photo-seagull-alt.jpg" alt="Her Vision documentary image">
+          </div>
+        </div>
+      </div>
+
+      <div class="modal" id="modal-veritruth" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-veritruth-title">
+        <div class="modal-panel">
+          <button class="modal-close" type="button" data-modal-close aria-label="Close project"><i data-lucide="x"></i></button>
           <p class="timeline-kicker">Solo academic project</p>
-          <h2>VeriTruth</h2>
+          <h2 id="modal-veritruth-title">VeriTruth</h2>
           <p>A mobile app concept for detecting AI-generated content and misinformation, explaining why content may be risky, supporting reports, and using a challenge game to spread awareness.</p>
           <p>I created the app idea, interface design, user flow, awareness mechanics, and AI feature framing.</p>
-          <p><strong>Tools:</strong> Figma and Google Studio.</p>
-        </article>
+          <p><a class="project-link" href="https://ai.studio/apps/drive/1ZpEYmJiSPvfJcajEWk5RoUFqAcKE8jwJ" target="_blank" rel="noreferrer">Open VeriTruth <i data-lucide="arrow-up-right"></i></a></p>
+          <div class="modal-gallery phone-gallery">
+            <img src="assets/projects/veritruth-1.png" alt="VeriTruth upload screen">
+            <img src="assets/projects/veritruth-2.png" alt="VeriTruth AI detection screen">
+            <img src="assets/projects/veritruth-3.png" alt="VeriTruth learning screen">
+            <img src="assets/projects/veritruth-4.png" alt="VeriTruth settings screen">
+          </div>
+        </div>
+      </div>
 
-        <article class="timeline-item" id="drowning-in-silence">
+      <div class="modal" id="modal-drowning" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-drowning-title">
+        <div class="modal-panel">
+          <button class="modal-close" type="button" data-modal-close aria-label="Close project"><i data-lucide="x"></i></button>
           <p class="timeline-kicker">Solo academic project</p>
-          <h2>Drowning in Silence</h2>
+          <h2 id="modal-drowning-title">Drowning in Silence</h2>
           <p>It represents society's pressure on women, draining their energy till they give up.</p>
           <p>I made a GIF representing these emotions and owned the project from concept to final visual presentation.</p>
-          <p><strong>Tools:</strong> to be confirmed from the source files.</p>
-        </article>
+          <div class="modal-gallery single-media">
+            <img src="assets/projects/drowning-in-silence.gif" alt="Drowning in Silence animated GIF">
+          </div>
+        </div>
+      </div>
 
-        <article class="timeline-item" id="the-shaper">
+      <div class="modal" id="modal-shaper" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-shaper-title">
+        <div class="modal-panel">
+          <button class="modal-close" type="button" data-modal-close aria-label="Close project"><i data-lucide="x"></i></button>
           <p class="timeline-kicker">Academic team project</p>
-          <h2>The Shaper / BAU PR Commercial</h2>
+          <h2 id="modal-shaper-title">The Shaper / BAU PR Commercial</h2>
           <p>A one-minute promotional television commercial for the BAU PR Department. While it was produced as a group project, I carried the concept and performance leadership.</p>
           <p>I wrote the script, led the creative direction, guided the team, and took the spokesperson role. Other team members supported the shooting and visual animations.</p>
-        </article>
+          <div class="modal-gallery single-media">
+            <video src="assets/projects/the-shaper.mp4" controls playsinline></video>
+          </div>
+        </div>
+      </div>
 
-        <article class="timeline-item">
+      <div class="modal" id="modal-photography" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-photography-title">
+        <div class="modal-panel">
+          <button class="modal-close" type="button" data-modal-close aria-label="Close project"><i data-lucide="x"></i></button>
           <p class="timeline-kicker">Solo academic project</p>
-          <h2>Photography</h2>
+          <h2 id="modal-photography-title">Photography</h2>
           <p>A personal photography series exploring portraiture, motion, fashion styling, and seasonal visual concepts.</p>
           <p>I worked on bust portrait, movement and blur studies, fashion photography, Women's Day, and Valentine's Day through creative concepting, visual direction, photography, editing, and final presentation.</p>
-          <p><strong>Tools:</strong> camera photography, Photoshop, Canva, and CapCut where needed.</p>
-        </article>
-      </section>
+          <div class="modal-gallery">
+            <img src="assets/projects/photo-portrait.jpg" alt="Portrait photography project">
+            <img src="assets/projects/photo-seagull.jpg" alt="Movement and blur photography project">
+            <img src="assets/projects/photo-seagull-alt.jpg" alt="Seagull photography project">
+            <img src="assets/projects/her-vision-1.jpg" alt="Architectural photography project">
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer class="site-footer">
