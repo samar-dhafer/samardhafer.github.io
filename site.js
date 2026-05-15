@@ -33,9 +33,39 @@
   }
 
   let activeModal = null;
+  const imageLightbox = document.createElement("div");
+  imageLightbox.className = "image-lightbox";
+  imageLightbox.setAttribute("aria-hidden", "true");
+  imageLightbox.innerHTML = `
+    <button class="image-lightbox-close" type="button" aria-label="Close full-size image"><i data-lucide="x"></i></button>
+    <img alt="">
+  `;
+  document.body.appendChild(imageLightbox);
+  const lightboxImage = imageLightbox.querySelector("img");
+  const lightboxClose = imageLightbox.querySelector("button");
+
+  function closeImageLightbox() {
+    imageLightbox.classList.remove("is-open");
+    imageLightbox.setAttribute("aria-hidden", "true");
+    if (lightboxImage) {
+      lightboxImage.removeAttribute("src");
+      lightboxImage.alt = "";
+    }
+  }
+
+  function openImageLightbox(image) {
+    if (!lightboxImage) return;
+    lightboxImage.src = image.currentSrc || image.src;
+    lightboxImage.alt = image.alt || "Full-size project image";
+    imageLightbox.classList.add("is-open");
+    imageLightbox.setAttribute("aria-hidden", "false");
+    lightboxClose?.focus();
+    if (window.lucide) window.lucide.createIcons();
+  }
 
   function closeModal() {
     if (!activeModal) return;
+    closeImageLightbox();
     activeModal.classList.remove("is-open");
     activeModal.setAttribute("aria-hidden", "true");
     activeModal.querySelectorAll("video").forEach((video) => video.pause());
@@ -67,8 +97,25 @@
     });
   });
 
+  document.querySelectorAll(".modal-gallery img").forEach((image) => {
+    image.addEventListener("click", (event) => {
+      event.stopPropagation();
+      openImageLightbox(image);
+    });
+  });
+
+  lightboxClose?.addEventListener("click", closeImageLightbox);
+  imageLightbox.addEventListener("click", (event) => {
+    if (event.target === imageLightbox) closeImageLightbox();
+  });
+
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeModal();
+    if (event.key !== "Escape") return;
+    if (imageLightbox.classList.contains("is-open")) {
+      closeImageLightbox();
+      return;
+    }
+    closeModal();
   });
 
   updateThemeLabel();

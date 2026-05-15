@@ -443,7 +443,9 @@ h3 {
 }
 
 .interactive-card .veritruth-thumb {
-  object-position: center 39%;
+  object-fit: contain;
+  object-position: center center;
+  background: #281164;
 }
 
 .interactive-card .drowning-thumb {
@@ -581,6 +583,59 @@ h3 {
 
 .photography-gallery img {
   object-fit: contain;
+  object-position: center center;
+  cursor: zoom-in;
+}
+
+.modal-gallery img {
+  cursor: zoom-in;
+}
+
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: none;
+  place-items: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.78);
+}
+
+.image-lightbox.is-open {
+  display: grid;
+}
+
+.image-lightbox img {
+  max-width: min(100%, 1180px);
+  max-height: calc(100vh - 56px);
+  width: auto;
+  height: auto;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 8px;
+  background: #0c0c0f;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.46);
+  object-fit: contain;
+}
+
+.image-lightbox-close {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 8px;
+  background: rgba(12, 12, 15, 0.86);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.image-lightbox-close i,
+.image-lightbox-close svg {
+  width: 20px;
+  height: 20px;
 }
 
 .phone-gallery {
