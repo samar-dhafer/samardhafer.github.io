@@ -438,6 +438,18 @@ h3 {
   background: var(--surface-strong);
 }
 
+.interactive-card .photography-thumb {
+  object-position: center 72%;
+}
+
+.interactive-card .veritruth-thumb {
+  object-position: center 39%;
+}
+
+.interactive-card .drowning-thumb {
+  object-position: center 25%;
+}
+
 .interactive-card strong {
   display: block;
   padding: 0 22px 8px;
@@ -567,8 +579,19 @@ h3 {
   object-fit: cover;
 }
 
+.photography-gallery img {
+  object-fit: contain;
+}
+
 .phone-gallery {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.phone-gallery img {
+  aspect-ratio: 9 / 19.5;
+  height: auto;
+  max-height: none;
+  object-fit: cover;
 }
 
 .single-media {

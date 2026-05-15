@@ -51,6 +51,7 @@
       modal.classList.add("is-open");
       modal.setAttribute("aria-hidden", "false");
       document.body.classList.add("modal-active");
+      modal.querySelectorAll("video").forEach((video) => video.load());
       modal.querySelector("[data-modal-close]")?.focus();
       if (window.lucide) window.lucide.createIcons();
     });
